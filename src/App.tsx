@@ -19,6 +19,8 @@ export default function App() {
       mass: 0,
     }
   );
+
+  //THE MAIN FUNCTION
   const sortingResults = (
     width: number,
     height: number,
@@ -37,7 +39,6 @@ export default function App() {
     const isBulky =
       volume >= 1000000 || width >= 150 || height >= 150 || length >= 150;
     const isHeavy = mass >= 20;
-    console.log({ width, height, length, mass, isBulky, isHeavy, volume });
     return isBulky && isHeavy
       ? "REJECTED"
       : isBulky || isHeavy
@@ -45,7 +46,6 @@ export default function App() {
       : "STANDARD";
   };
   const handleTestCase = (testCase: TestCase, index: number) => {
-    console.log(`Testing ${testCase.description}`);
     const result = sortingResults(
       testCase.width,
       testCase.height,
